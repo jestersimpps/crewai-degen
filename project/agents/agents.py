@@ -1,14 +1,11 @@
 from crewai import Agent
-from textwrap import dedent
 from langchain_community.llms import Ollama
 from langchain_google_genai import ChatGoogleGenerativeAI
-from langchain_community.llms import HuggingFaceHub, HuggingFaceEndpoint
-from langchain_community.chat_models.huggingface import ChatHuggingFace
 from langchain_openai import ChatOpenAI
-from langchain_google_genai import ChatGoogleGenerativeAI
-
-from tools import ExtractionTools, DataFetchingTools, ChartingTools, MarkdownTools
+from tools.tools import ExtractionTools, DataFetchingTools, ChartingTools, MarkdownTools
 from dotenv import load_dotenv
+from textwrap import dedent
+
 import os
 
 load_dotenv() 
@@ -58,7 +55,3 @@ class FinancialResearchAgents:
             verbose=True,
             llm=self.OpenAIGPT4,
         )
-
-
-
-     

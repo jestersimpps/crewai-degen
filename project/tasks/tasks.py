@@ -1,7 +1,5 @@
-from crewai import Task
 from textwrap import dedent
-from typing import List
-from pydantic import BaseModel
+from crewai import Task
 
 class MarkdownReportCreationTasks:
     def __tip_section(self):
@@ -9,7 +7,7 @@ class MarkdownReportCreationTasks:
 
     def parse_input(self, agent, data: str):
         return Task(
-               description=dedent(f"""
+            description=dedent(f"""
             **Task**: Extract relevant data from string.
             **Description**: Take the input string and get the company
             symbol out of it and also any metrics that are available.
@@ -28,7 +26,7 @@ class MarkdownReportCreationTasks:
 
     def get_data_from_api(self, agent, context):
         return Task(
-               description=dedent(f"""
+            description=dedent(f"""
             **Description**: For each metric, look up the metric for the symbol provided by using the tool.
 
             **Notes**

@@ -1,8 +1,8 @@
-from crewai import Agent, Task, Crew, Process
+from crewai import Crew
 
 from textwrap import dedent
-from agents import FinancialResearchAgents
-from tasks import MarkdownReportCreationTasks
+from agents.agents import FinancialResearchAgents
+from tasks.tasks import MarkdownReportCreationTasks
 
 class FinancialCrew:
     def __init__(self, data):
